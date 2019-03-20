@@ -1,1 +1,1 @@
-web: python Archive/app_with_handler.py
+web: python Archive/address_get_app.py
