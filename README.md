@@ -9,6 +9,5 @@
 </p>
 
 ###参考にしたサイト
-[https://www.youtube.com/watch?v=Q8e4dTnTAn4&list=PL809AxVgOg1TeZPLONvmxn8t0dfwbNUSs&index=5](https://www.google.com)
-[https://www.youtube.com/watch?v=Q8e4dTnTAn4&list=PL809AxVgOg1TeZPLONvmxn8t0dfwbNUSs&index=5]
+
 [https://www.youtube.com/watch?v=Q8e4dTnTAn4&list=PL809AxVgOg1TeZPLONvmxn8t0dfwbNUSs&index=5]([https://www.youtube.com/watch?v=Q8e4dTnTAn4&list=PL809AxVgOg1TeZPLONvmxn8t0dfwbNUSs&index=5](https://www.google.com))
