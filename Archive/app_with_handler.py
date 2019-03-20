@@ -27,6 +27,13 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+import base64
+import hashlib
+import hmac
+import json
+import requests
+
+
 app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
@@ -63,11 +70,32 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def message_text(event):
+
+    address = get_address(event.message.text)
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text)
+        TextSendMessage(text=address)
     )
 
+def get_address(zip):
+    url = "http://zipcloud.ibsnet.co.jp/api/search"
+    # event.meesage.text should contain zip
+    parameter = {"zipcode" : zip}
+
+    r = requests.get(url, params=parameter)
+
+    print(r.status_code)
+    if r.status_code == 200:
+        jsontext = json.loads(r.text)
+        if jsontext['status'] == 200:
+            if jsontext['results'] is None:
+                return "皇居：東京都千代田区千代田"
+            a1 = jsontext['results'][0]["address1"]
+            a2 = jsontext['results'][0]["address2"]
+            a3 = jsontext['results'][0]["address3"]
+            return "住所：{0}{1}{2}".format(a1,a2,a3)
+    return "正しい郵便番号よろしく"
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
