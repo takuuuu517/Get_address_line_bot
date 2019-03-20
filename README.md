@@ -4,6 +4,10 @@
 ###使い方
 郵便番号を送る
 フォーマット：0000000 または 000-0000
+<p align="center">
+  <img src="https://github.com/takuuuu517/python_app/blob/master/%E4%BD%BF%E3%81%84%E6%96%B9.png" width="350" alt="使い方">
+</p>
+
 ![使い方](https://github.com/takuuuu517/python_app/blob/master/%E4%BD%BF%E3%81%84%E6%96%B9.png)
 
 ###参考にしたサイト
